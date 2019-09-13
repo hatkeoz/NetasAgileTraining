@@ -23,6 +23,11 @@ public class SubCategoryService {
 		subCategorySaved.setResoruceUrl(generateResourceUrlPost(subCategorySaved.getSubId()));
 		return subCategorySaved;
 	}
+	
+	public Iterable<SubCategory> getAllCategory() {
+		Iterable<SubCategory> subCategorySaved = subCategoryRepository.findAll();
+		return subCategorySaved;
+	}
 
 	private String generateResourceUrlPost(Integer id) {
 		return "/agileTraining/v1/category/" + id.toString();

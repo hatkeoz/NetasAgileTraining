@@ -29,4 +29,12 @@ public class SubCategoryController extends BaseController{
 
 		return new ResponseEntity<>(createdCategory, HttpStatus.CREATED);
 	}
+
+	@GetMapping("{categoryId}/subcategory")
+	private ResponseEntity<Iterable<SubCategory>> getAllSubCategory() {
+
+		Iterable<SubCategory> createdCategory = subCategoryService.getAllCategory();
+
+		return new ResponseEntity<>(createdCategory, HttpStatus.CREATED);
+	}
 }
