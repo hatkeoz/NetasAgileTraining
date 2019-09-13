@@ -1,4 +1,4 @@
 FROM java:8-jdk-alpine
 WORKDIR /usr/app
-COPY application/layeredarch-0.0.1-SNAPSHOT.jar /usr/app/
-ENTRYPOINT ["java","-jar","layeredarch-0.0.1-SNAPSHOT.jar"]
+COPY Training/target/Training-0.0.1-SNAPSHOT.jar /usr/app/
+ENTRYPOINT ["java","-jar","Training-0.0.1-SNAPSHOT.jar"]
