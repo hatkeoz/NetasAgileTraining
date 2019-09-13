@@ -21,6 +21,11 @@ public class CategoryService {
 		categorySaved.setResoruceUrl(generateResourceUrlPost(categorySaved.getId()));
 		return categorySaved;
 	}
+	
+	public Iterable<Category> getAllCategory() {
+		Iterable<Category> categorySaved = categoryRepository.findAll();
+		return categorySaved;
+	}
 
 	private String generateResourceUrlPost(Integer id) {
 		return "/agileTraining/v1/category/" + id.toString();

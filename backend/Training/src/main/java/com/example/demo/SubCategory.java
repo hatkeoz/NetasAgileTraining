@@ -20,9 +20,9 @@ public class SubCategory {
 	@Transient
 	private String resoruceUrl;
 
-//	@ManyToOne(cascade = CascadeType.ALL)
-//	@JoinColumn(name = "id")
-//	private Category category;
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "categoryId")
+	private Category category;
 
 	public Integer getSubId() {
 		return subId;
@@ -48,12 +48,12 @@ public class SubCategory {
 		this.resoruceUrl = resoruceUrl;
 	}
 
-//	public Category getCategory() {
-//		return category;
-//	}
-//
-//	public void setCategory(Category category) {
-//		this.category = category;
-//	}
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
 
 }

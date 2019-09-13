@@ -30,5 +30,13 @@ public class CategoryController extends BaseController {
 
 		return new ResponseEntity<>(createdCategory, HttpStatus.CREATED);
 	}
+	
+	@GetMapping("")
+	private ResponseEntity<Iterable<Category>> getAllCategory() {
+
+		Iterable<Category> createdCategory = categoryService.getAllCategory();
+
+		return new ResponseEntity<>(createdCategory, HttpStatus.CREATED);
+	}
 
 }

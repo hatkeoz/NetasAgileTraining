@@ -14,7 +14,7 @@ public class SubCategoryController extends BaseController{
 	@Autowired
 	private SubCategoryService subCategoryService;
 	
-	/**@PostMapping("{categoryId}/subcategory")
+	@PostMapping("{categoryId}/subcategory")
 	private ResponseEntity<SubCategory> saveSubCategory(@PathVariable("categoryId") int categoryId,@RequestBody SubCategory subCategory) {
 
 		SubCategory createdCategory = subCategoryService.saveOrUpdate(categoryId,subCategory);
@@ -28,5 +28,5 @@ public class SubCategoryController extends BaseController{
 		SubCategory createdCategory = subCategoryService.getCategory(id);
 
 		return new ResponseEntity<>(createdCategory, HttpStatus.CREATED);
-	}**/
+	}
 }

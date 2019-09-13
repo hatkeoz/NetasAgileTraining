@@ -20,8 +20,8 @@ public class Category {
 	@Transient
 	private String resoruceUrl;
 	
-//	@OneToMany(mappedBy = "subcategory")
-//	private List<SubCategory> subCategorys;
+	@OneToMany(mappedBy = "category")
+	private List<SubCategory> subCategorys;
 
 	public Integer getId() {
 		return id;
@@ -47,14 +47,12 @@ public class Category {
 		this.resoruceUrl = resoruceUrl;
 	}
 
-//	public List<SubCategory> getSubCategorys() {
-//		return subCategorys;
-//	}
-//
-//	public void setSubCategorys(List<SubCategory> subCategorys) {
-//		this.subCategorys = subCategorys;
-//	}
+	public List<SubCategory> getSubCategorys() {
+		return subCategorys;
+	}
 
-
+	public void setSubCategorys(List<SubCategory> subCategorys) {
+		this.subCategorys = subCategorys;
+	}
 
 }
