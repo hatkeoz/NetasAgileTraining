@@ -47,6 +47,7 @@ paths:
             $ref: "#/definitions/CategoryResponse"
         405:
           description: "Method Not Supported"
+  /agileTraining/v1/category/{categoryId}:
     put:
       tags:
       - "category"
@@ -64,14 +65,23 @@ paths:
         required: true
         schema:
           $ref: "#/definitions/Category"
+      - name: "categoryId"
+        in: "path"
+        description: "ID of category"
+        required: true
+        type: "integer"
+        format: "int64"    
       responses:
+        200:
+          description: "Category is updated successfully"
+          schema:
+            $ref: "#/definitions/CategoryResponse"
         400:
           description: "Invalid ID supplied"
         404:
           description: "Category not found"
         405:
-          description: "Validation exception"
-  /agileTraining/v1/category/{categoryId}:
+          description: "Method Not Supported"
     get:
       tags:
       - "category"
@@ -96,6 +106,8 @@ paths:
           description: "Invalid ID supplied"
         404:
           description: "Category not found"
+        405:
+          description: "Method Not Supported"
     delete:
       tags:
       - "category"
@@ -111,7 +123,7 @@ paths:
         type: "string"
       - name: "categoryId"
         in: "path"
-        description: "Category id to delete"
+        description: "Category id to be deleted"
         required: true
         type: "integer"
         format: "int64"
@@ -120,6 +132,8 @@ paths:
           description: "Invalid ID supplied"
         404:
           description: "Category not found"
+        405:
+          description: "Method Not Supported"
 definitions:      
   Category:
     type: "object"
