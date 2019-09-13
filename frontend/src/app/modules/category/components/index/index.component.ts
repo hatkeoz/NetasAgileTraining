@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoryService } from '../../services/category.service';
+import { IBaseResponse } from 'src/commons/interface/IBaseResponse';
 
 @Component({
   selector: 'app-index',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
-
-  constructor() { }
+  model: Array<IBaseResponse>;
+  constructor(private categoryService: CategoryService) { }
 
   ngOnInit() {
+    this.categoryService.find().subscribe(d => this.model = d);
   }
 
 }

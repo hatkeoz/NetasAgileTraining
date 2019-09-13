@@ -8,6 +8,10 @@ const routes: Routes = [
   {
     path: 'category',
     loadChildren: './modules/category/category.module#CategoryModule'
+  },
+  {
+    path: 'subcategory',
+    loadChildren: './modules/sub-category/sub-category.module#SubCategoryModule'
   }
 ];
 
