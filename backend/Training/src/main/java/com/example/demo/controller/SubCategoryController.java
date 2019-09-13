@@ -1,5 +1,8 @@
 package com.example.demo.controller;
 
-public class SubCategoryController {
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class SubCategoryController extends BaseController{
 
 }
